@@ -1,0 +1,42 @@
+/* MessageComponent's private CSS styles */
+
+h2 {
+  color: #ff0000;
+  font-weight: lighter;
+}
+
+body {
+  margin: 2em;
+}
+
+body,
+input[text],
+button {
+  color: #dc143c;
+  font-family: Cambria, Georgia;
+}
+
+button.clear {
+  color: #333;
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  margin-bottom: 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}
+
+button:disabled {
+  color: #aaa;
+  background-color: #eee;
+  cursor: auto;
+}
