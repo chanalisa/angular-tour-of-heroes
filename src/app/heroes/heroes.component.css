@@ -10,7 +10,6 @@
 .heroes li {
   cursor: pointer;
   position: relative;
-  left: 0;
   background-color: #eee;
   margin: 0.5em;
   padding: 0.3em 0;
@@ -28,14 +27,16 @@
   left: 0.1em;
 }
 
-.heroes li.selected {
-  color: #fff;
-  background-color: #cfd8dc;
+.heroes a {
+  color: #333;
+  text-decoration: none;
+  position: relative;
+  display: block;
+  width: 250px;
 }
 
-.heroes li.selected:hover {
-  color: #fff;
-  background-color: #bbd8dc;
+.heroes a:hover {
+  color: #607d8b;
 }
 
 .heroes .badge {
@@ -49,10 +50,37 @@
   left: -1px;
   top: -4px;
   height: 1.8em;
+  min-width: 16px;
+  text-align: right;
   margin-right: 0.8em;
   border-radius: 4px 0 0 4px;
   -webkit-border-radius: 4px 0 0 4px;
   -moz-border-radius: 4px 0 0 4px;
   -ms-border-radius: 4px 0 0 4px;
   -o-border-radius: 4px 0 0 4px;
+}
+
+button {
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  cursor: pointer;
+  font-family: Arial;
+}
+
+button:hover {
+  background-color: #cfd8dc;
+}
+
+button.delete {
+  position: relative;
+  left: 194px;
+  top: -32px;
+  background-color: #808080 !important;
+  color: #fff;
 }
