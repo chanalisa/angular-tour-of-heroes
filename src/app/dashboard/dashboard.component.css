@@ -68,6 +68,7 @@ module:hover {
 
 @media (max-width: 600px) {
   .module {
+    padding: 5px;
     font-size: 10px;
     max-height: 75px;
   }
