@@ -30,6 +30,20 @@ export class HeroService {
     );
   }
 
+  // GET hero by id. Returns `undefined` when id not found
+  getHeroNo404<Data>(id: number): Observable<Hero> {
+    const url = `${this.heroesUrl}/?id=${id}`;
+    return this.http.get<Hero[]>(url).pipe(
+      // returns a {0|1} element array
+      map(heroes => heroes[0]),
+      tap(h => {
+        const outcome = h ? "fetched" : "did not find";
+        this.log(`${outcome} hero id=${id}`);
+      }),
+      catchError(this.handleError<Hero>(`getHero id=${id}`))
+    );
+  }
+
   // GET hero by id and will 404 if id not found
   getHero(id: number): Observable<Hero> {
     // this.messageService.add(`HeroService: Fetched hero id=${id}`);
@@ -85,7 +99,7 @@ export class HeroService {
 
   // Handles HTTP operation that fails.
   // Lets the app continue.
-  //  @param operation: name of the operation that failed
+  // @param operation: name of the operation that failed
   // @param result: (optional) value to return as the observable result
   private handleError<T>(operation = "operation", result?: T) {
     return (error: any): Observable<T> => {
